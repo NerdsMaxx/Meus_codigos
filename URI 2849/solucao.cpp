@@ -62,20 +62,20 @@ int main(){
 	
 	int l,r,k,g,d;
 	for(int i=0; i<q; i++){
-		scanf("%d%d%d%d%d",&l,&r,&k,&g,&d);
+	scanf("%d%d%d%d%d",&l,&r,&k,&g,&d);
         --l,--r;
         
         long long kth_elemento = 0;
         for(int i=0, j=0; j<k && i<n; ++i){
-			if(pos_ord[i] >= l && pos_ord[i]<= r){
-				++j;
-				if(j == k)
-					kth_elemento = vetor[pos_ord[i]];
-			}
+		if(pos_ord[i] >= l && pos_ord[i]<= r){
+			++j;
+			if(j == k)
+				kth_elemento = vetor[pos_ord[i]];
 		}
+	}
 
         int qtd = 0;
-		vector<int>& vetor_posicoes = num_posicoes[kth_elemento];
+	vector<int>& vetor_posicoes = num_posicoes[kth_elemento];
         vector<int>::iterator it_l =  pesquisaBinaria(vetor_posicoes, l);
         vector<int>::iterator it_r =  pesquisaBinaria(vetor_posicoes, r);
         
